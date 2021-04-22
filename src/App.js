@@ -1,16 +1,23 @@
 import React, { Component } from "react"
-import Header from "./pages/header/Header"
-import Login from "./pages/login/Login"
+import { BrowserRouter, Route, Switch } from "react-router-dom"
 
-import 'antd/dist/antd.css'
+import { message } from 'antd';
+import Login from "./pages/login/Login";
+import Index from "./pages/index";
 
-export default class App extends Component{
+export default class App extends Component {
+
+    handleClick = () => {
+        message.info('点击成功');
+    }
     render () {
         return (
-            <div style={{height: '100%', width: '100%'}}>
-                <Login></Login>
-                {/* <Header></Header> */}
-            </div>
+            <BrowserRouter>
+                <Switch> {/* 只匹配其中一个路由 */}
+                    <Route path="/login" component={Login}></Route>
+                    <Route path="/index" component={Index}></Route>
+                </Switch>
+            </BrowserRouter>
         )
     }
 }
