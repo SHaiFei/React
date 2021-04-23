@@ -34,7 +34,7 @@
       "no-restricted-globals": "off",
       "no-unused-vars": "off"
     }
-    },
+  },
   "browserslist": {
     "production": [
       ">0.2%",

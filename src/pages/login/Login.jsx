@@ -19,17 +19,11 @@ export default class Login extends Component {
         captchaImage().then(res => {
             if (res.code == 200) {
                 this.state.loginForm.uuid = res.uuid
-                // let data = this.state.loginForm
-                // data.uuid = res.uuid
-                // this.setState({
-                //     loginForm: data
-                // })
             } else {
                 message.error(res.msg)
             }
         })
     }
-
     onFinish = (values) => {
         this.state.loginForm.username = values.username
         this.state.loginForm.password = values.password
